@@ -1,0 +1,103 @@
+/* ¿COMO FUNCIONA CSS?
+    Especificidad -> Estable còmo de especifico es un
+    selector para saber què estilo aplicar.
+    El calculo se realiza con la siguiente formula:
+        Etiquetas y pseudoelementos 001
+        Clases, atributos y pseudoclases 010
+        Ids 100
+        Estilos en linea 1000
+        !important GANA A TODO Y NO SE USA NUNCA
+    Cascada -> Funciona siempre que la especificidad sobre el 
+    elemento sea la misma
+    
+    Herencia -> Es la capacidad que tienen algunos elementos
+    de heredad algunas propiedades de sus elementos contenedores
+    (padres, abuelos, etc)
+
+------------------------------------------------------------------------
+herencia
+aca observamos como se efectua la herencia
+ejm: el "span" dentro de "h1" dentro de la clase ".title" /
+como no afecta al "<a>" dentro de "p" dentro de la clase ".text"
+y para poder modificar el "<a>" se hace uso de su propia clase "link"
+
+color: inherit -> fuerza la herencia
+color: initial -> vuelve a su forma inicial
+*/
+body{
+    background-color: #333;
+}
+
+h1{
+    color:cyan;
+    font-size: 10px;
+}
+
+.text{
+    color:green;
+}
+
+.link{
+    color:inherit;
+}
+
+.list{
+    color:indianred;
+}
+
+.list-item-extra{
+color:initial;
+}
+
+.title{
+  color: red;
+}
+/*  
+------------------------------------------------------------------------
+buena practica .title la clase 
+si la especificidad es la misma se sobrescribe el css en cascada
+.title{
+    background-color: teal;
+}
+
+.title{
+    background-color: yellow;
+}
+----------------------------------------------------------------------
+
+tiene especificidad 1
+h1 {
+  background-color: red;
+}
+
+tiene especificidad 10
+.title {
+  background-color: blue;
+}
+
+tiene especificidad 100
+#title {
+  background-color: green;
+}
+
+tiene especificidad 1 +10 =11
+h1.title {
+  background-color: yellow;
+}
+
+tiene especificidad 1 +100 =101
+h1#title {
+  background-color: teal;
+}
+
+tiene especificidad 1 + 10 + 100 = 111 
+h1.title#title {
+  background-color: tomato;
+}
+
+ aplicando el important
+h1.title {
+    background-color: red ;
+  } */
+
+  

@@ -1,0 +1,179 @@
+/* SELECTORES 
+
+    Selectores Simples
+        *Selectores elementales
+           - Selector universal -> *
+            -Selector de tipo o etiqueta -> Nombre de la
+            etiqueta
+        *Selectores de atributo
+            -id -> id del elemento
+            -clase -> calse del elemento
+            -otros atributos.
+                [atributo]
+                [atributo=valor]
+                [atributo^=valor]
+                [atributo*=valor]
+                [atributo &=valor]
+                [atributo|=valor] -> Selecciona los elementos
+                cuyo atributo comience con valor o valor-
+
+    Selectores compuestos
+        *Selectores Agrupados -> Se agrupan los selectores
+        separados por comas y se escribe el estilo una sola
+        vez        
+        *Selectores Combinadores
+            -Selector descendiente: cuando un elemento esta dentro
+            de otro elemento se le llama como hijo
+            -Selector de hermano siguiente "+" : son hermanos cuando
+            estan al mismo nivel h1 es hermano de p que es hermano
+            de h2 que es hermano de div...
+            -Selector de hermanos siguientes "~": selecciona
+            a todos los hermanos siguientes
+            -Selector de hijo directo > -> selecciona SOLO los
+            hijos directos
+--------------------------------------------------------------------
+
+selector hijo directo
+selecciona SOLO los hijos directos */
+.container >p{
+    background-color: tomato;
+}
+
+
+
+
+
+/*  
+--------------------------------------------------------------------
+selector descendiente 
+realizamos cuando queremos seleccionar una clase especifica ejemplo:
+la clase title-2 dentro del div, de esta manera cualquier elemento con 
+la clase que no este dentro de un div no sera seleccionado o modificado
+su apariencia
+consejo: las buenas practicas no recomiendan bajar mas de un nivel solo
+hasta div .title-2 esta bien segun la especificidad
+lo que estaria mal seria html body div .title-2 
+
+div .title-2 {
+  background-color: teal;
+}
+
+
+--------------------------------------------------------------------
+selector de hermano siguiente
+se representa con el + el cual solo selecciona el hermano que esta
+siguiente solo el siguiente 
+
+.text-2 + h2{
+    background-color: tomato;
+}
+
+--------------------------------------------------------------------
+selector de hermanos siguientes 
+ejem: .text2 ~p esta seleccionando todos los hermanos siguientes de
+.text2 que sean "p" o ".text"
+en el siguiente lo esta mesclando con selector desscendiente al poner
+ "text-2 ~ .text span"
+ en el siguiente lo esta mesclando con selector desscendiente y selector
+ heramno siguiente al poner:
+ "text-2 ~ .text + span"
+
+.text-2 ~ .text{
+    background-color: teal;
+}
+
+ -------------------------------------------------------------- 
+selector de clase
+cuando es "." y luego algo se refiere a una clase
+.text,
+.text-2,
+.text-3,
+.text-4{
+    background-color: steelblue;
+}
+
+.text-2{
+    background-color: steelblue;
+}
+.text-3{
+    background-color: steelblue;
+}
+.text-4{
+    background-color: steelblue;
+} 
+
+ -------------------------------------------------------------- 
+* -> es universal osea todo
+*{
+  background-color: lightcoral;
+}
+
+ -------------------------------------------------------------- 
+ 
+ selector de tipo
+Selecciona todos los elementos que coinciden con el nombre del elemento
+especificado.
+
+h1 {
+  background-color: lightcyan;
+}
+p {
+  background-color: lightgreen;
+}
+ul{
+    background-color: red;
+}
+li{
+    background-color: blue;
+
+
+ -------------------------------------------------------------- 
+
+
+selector de id
+    el # es para seleccionar un id el cual es unico pero segun el 
+    estandar de css los estilos no deben ser para elementos unicos
+    sino para mas elementos 
+#title{
+    background-color: lightgreen;
+}
+
+.title{
+    background-color: lightsalmon;
+}
+
+.text{
+    background-color: lightgreen;
+} 
+
+ -------------------------------------------------------------- 
+
+
+ selector de atributo
+ [href]{
+    background-color: mediumorchid;
+}
+
+ atributo = valor 
+ [href="https://google.com"]{
+    background-color: orangered;
+
+
+ comienzo 
+ [href^="color"]{
+    background-color: red;
+
+medio 
+ [href*="modo"]{
+    background-color: green;
+ }
+
+ final 
+ [href$="azul"]{
+    background-color: steelblue;
+} 
+
+ atributo y valor = o con - 
+ [lang|="en"]{
+    background-color: magenta;
+}  */

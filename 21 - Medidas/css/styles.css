@@ -1,0 +1,147 @@
+/*  
+  Las medidas en CSS se pueden agrupar en 2 grupos, absolutas y relativas.
+  
+  Las medidas absolutas NO CAMBIAN y siempre mantendran su tamaño independientemente
+  del dispositivo o la interaccion del usuario.
+  La mas usada es px(pixeles) cuya medida es 1/96 de lin, pero exiten otras como:
+    cm(centimetros) -> 1cm= 96px/2,54
+    mm(milimetros) -> 1mm 0 1/10 de 1cm
+    Q(cuarto de milimetro) -> 1Q = 1/40 de  1 cm
+    in(inches,pulgadas) -> lin= 2,54cm= 96px
+    pc(picas) -> 1pc = 1/16 de lin
+    pt(puntos) -> 1pt = 1/72 de lin
+
+  Las medidas relativas SIEMPRE dependen de un contexto son las que se recomienda
+  utilizar en la gran mayoria de ocasiones porque nos van a permitir que todos los
+  elementos escalen proporcionalmente.
+  Las mas usadas son em, rem, %, vw, vh, vmin y vmax aunque tenemos otras como:
+    ex -> Altura x de la fuente del elemento.
+    ch -> La medida del ancho del glifo "0" de la letra del elemento
+    lh -> Altura de la linea del elemento.
+
+  rem -> Corresponde a la medida de la "m" de la raiz del
+  documento(html).
+
+  ejemplo: 16px =1rem
+  
+  em -> Corresponde a la medida de la "m" del contexto
+  donde nos encontramos.
+
+  El estander del tamaño de fuente por defecto en la raiz
+  del documento es 16px, NO ES RECOMENDABLE MODIFICARLO.
+
+  NOTA: Tanto "em" como "rem" se calcula en base a la
+  propiedad font-size (tamaño de fuente)
+
+  ?????
+  WIDTH:
+
+  auto -> Cuando usamos auto le pedimos al
+  navegador que calcule el ancho en funcion del 
+  espacio disponible.
+
+  HEIGHT:
+    % -> Cuando estamos dentro de un contenedor,
+    este tiene que tener un alto declarado, si no
+    no podra calcular el porcentaje. Si se le
+    aplica una medida con porcentaje se sustituira
+    automaticamente por auto.
+
+    auto -> Cuando utilizamos auto el alto lo
+    calculara el navegador en base al contenido del
+    elemento
+
+  NOTA: Height es una propiedad que teneis que usar
+  con mucho cuidado. Si no es necesario establecer
+  un alto, dejad que el contenido sea el que decida
+  el alto del elemento.
+
+  VIEWPORT
+    El viewport es el area util donde se mostrara la pagina
+    web. IMPORTANTE tened en cuenta que es el area visible
+    sin hacer scroll.
+    Podemos usar el viewport como medida de varias formas:
+      vw-> Viewport Width, hace referencia al ancho del
+      viewport.
+      vh -> Viewport Height, hace referencia al alto del 
+      viewport.
+      vmax-> Utiliza el valor màs grande entre el ancho y
+      el alto del viewport.
+      vmin-> Utiliza el valor màs pequeño entre el ancho y
+      el alto del viewport.
+
+      1vw= 1% del ancho del viewport
+      1vh= 1% del alto del viewport
+      1vmin= 1% del valor que sea màs pequeño del viewport
+      1vmax= 1% del valor que sea màs grande del viewport
+
+  Limitadores al ancho y alto
+    Cuando establecemos un width y/o un height con una medida
+    que es relatica, es posible que no queramos que se
+    respete esa medida en todos los casos.
+    Para ello tenemos propiedades que limitan esas medidas:
+    min-width: Indica el ancho minimo que puede alcanzar el
+    elemento.
+    max-width: Indica el ancho maximo que puede alcanzar el
+    elemento
+    min-height: Indica el alto minimo que puede alcanzar el
+    elemento
+    max-height: Indica el alto maximo que puede alcanzar el
+    elemento.
+*/
+
+html {
+  height: 300px;
+}
+body {
+  margin: 0;
+  background-color: #333;
+  color: lightcoral;
+}
+/* el em dependera del font-size en el que este como base
+por defecto es 16px 
+mientras que el rem siempre sera *16px 
+RECOMENDACION para tamaño de fuente siempre usar rem*/
+
+/* .title {
+  font-size: 3rem;
+} */
+
+/* .link {
+  background-color: lightcoral;
+  color: #333;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  font-size: 2rem;
+} */
+
+/* .header {
+  text-align: center;
+  background-color: lightskyblue;
+  height: 100vh;
+} */
+
+.box {
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 60vw;
+  max-height: 300px;
+  min-height: 100px;
+  /* padding-bottom: 30px; */
+  background-color: lightgreen;
+}
+
+/* .box-children {
+ se usa position:absolute hara referencia al viewport
+    se usa position:sticky no hace nada 
+  position: sticky;
+  top: 0;
+
+  el width:123vw es para el ancho del viewport
+  width: 50%;
+  width: 50vw; 
+  width: 30vmax;
+  height: 150px;
+  background-color: lightseagreen;
+} */

@@ -1,0 +1,50 @@
+/* 
+LOS MARGENES VERTICALES COLAPSAN
+    
+    */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+}
+
+.header {
+  background-color: lightcoral;
+  height: 100px;
+  margin-bottom: 20px;
+  /* overflow: hidden;
+  un hack: si ponemos overflow: hidden; se solucionara el
+  problema de colapsado entre padres e hijos como el .title
+  que es el .title con el .header 
+  padding-top: 0.1px; crea un margen minimo
+  border-top:0.1px solid ligthcoral; es necesario poner el solid
+  para que funcione y el color para disimular
+  */
+  border-top:0.1px solid lightcoral;
+}
+
+.title{
+    margin:0;
+    margin-top:30px;
+}
+/* 
+lo recomendable es usar margen bottom e ir bajando para no
+ocasionar un colpaso de margenes es decir que se solapen
+no combinar margin top con margin bottom
+*/
+.box-1,
+.box-2 {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcyan;
+  width: 300px;
+  height: 300px;
+}
+
+.box-1{
+    margin-bottom: 30px;
+}
